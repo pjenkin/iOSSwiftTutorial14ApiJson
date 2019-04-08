@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var usaLabel: UILabel!
@@ -17,6 +17,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,6 +26,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print(searchBar.text!)      // NB '!' unwrapping
+        // clicked - pressing enter &c
+    }
+    
+    // bespoke function to get the kind of currency used by user
+    func getCurrency(currency:String)
+    {
+        //
+        let url = URL(string: "http://api.fixer.io/latest/base=\(currency)")
+    }
 
 }
 
