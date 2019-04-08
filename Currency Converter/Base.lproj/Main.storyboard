@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="17D47" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Currency_Converter" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="SNi-wo-XH8">
+                                <rect key="frame" x="0.0" y="115" width="375" height="44"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Currency Converter App" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jl4-gT-mjv">
+                                <rect key="frame" x="94" y="43" width="186.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="USD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiF-PP-0lb">
+                                <rect key="frame" x="169.5" y="220" width="35" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GBP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dwA-o9-70J">
+                                <rect key="frame" x="170.5" y="323" width="33.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="CAD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blR-Vv-TfG">
+                                <rect key="frame" x="171" y="434" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="SNi-wo-XH8" firstAttribute="centerX" secondItem="dwA-o9-70J" secondAttribute="centerX" id="3lF-WY-WNT"/>
+                            <constraint firstItem="SNi-wo-XH8" firstAttribute="top" secondItem="Jl4-gT-mjv" secondAttribute="bottom" constant="51" id="8WJ-4d-qSY"/>
+                            <constraint firstItem="SNi-wo-XH8" firstAttribute="centerX" secondItem="Jl4-gT-mjv" secondAttribute="centerX" id="Bju-fN-Snn"/>
+                            <constraint firstItem="Jl4-gT-mjv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="23" id="E9l-Cd-z1b"/>
+                            <constraint firstItem="blR-Vv-TfG" firstAttribute="top" secondItem="dwA-o9-70J" secondAttribute="bottom" constant="90" id="NYd-6p-sKo"/>
+                            <constraint firstItem="blR-Vv-TfG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="10" id="XCK-YB-wUg"/>
+                            <constraint firstItem="SiF-PP-0lb" firstAttribute="top" secondItem="SNi-wo-XH8" secondAttribute="bottom" constant="61" id="b7F-6O-Ug3"/>
+                            <constraint firstItem="dwA-o9-70J" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="chI-DG-IAQ"/>
+                            <constraint firstItem="SNi-wo-XH8" firstAttribute="centerX" secondItem="SiF-PP-0lb" secondAttribute="centerX" id="dpo-On-sJn"/>
+                            <constraint firstItem="SNi-wo-XH8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eKZ-v1-wPs"/>
+                            <constraint firstAttribute="trailing" secondItem="SNi-wo-XH8" secondAttribute="trailing" id="khI-Qx-jjx"/>
+                            <constraint firstItem="blR-Vv-TfG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="162" id="s4u-QU-bD2"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="canadaLabel" destination="blR-Vv-TfG" id="IPG-Cr-Pxq"/>
+                        <outlet property="searchBar" destination="SNi-wo-XH8" id="vHc-kB-7oU"/>
+                        <outlet property="ukLabel" destination="dwA-o9-70J" id="UI5-cf-VtH"/>
+                        <outlet property="usaLabel" destination="SiF-PP-0lb" id="BEO-fx-RgP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="123.68815592203899"/>
         </scene>
     </scenes>
 </document>
