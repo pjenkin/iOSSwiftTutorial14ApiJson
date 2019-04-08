@@ -70,11 +70,26 @@ class ViewController: UIViewController, UISearchBarDelegate {
                 do
                 {
                     let jSONResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as! Dictionary<String, AnyObject>
-                    // from API docs, some fields arrays not strings, so use AnyObject
+                    // from API docs, some fields arrays not strings, so use AnyObject - into Dictionary key/value pairs
                     if data != nil
                     {
                         DispatchQueue.main.async {      // NB asynchronously DispatchQueue.main.async
                             print(jSONResult)
+                            
+                            print(jSONResult["rates"])
+                            
+                            let rates = jSONResult["rates"] as! [String: AnyObject]
+                            
+                            let usd = String(describing: rates["USD"]!)  // from AnyObject type - NB (i) describing (ii) ! to avoid 'Optional' printing out around string 
+                            self.usaLabel.text = "USD: \(usd)"
+                            // NB also ?? coalescing/unpacking operator
+                            
+                            let gbp = String(describing: rates["GBP"]!)  // from AnyObject type
+                            self.ukLabel.text = "GBP: \(gbp)"
+
+                            let cad = String(describing: rates["CAD"]!)  // from AnyObject type
+                            self.canadaLabel.text = "CAD: \(cad)"
+                            
                         }
                     }
 
